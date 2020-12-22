@@ -16,12 +16,14 @@ class StateController extends Controller
     public function offState(){
         $state = State::where('id',1)->first();
         $state->state = 0;
+        $state->save();
         return response(200);
     }
 
     public function onState(){
         $state = State::where('id',1)->first();
         $state->state = 1;
+        $state->save();
         return response(200);
     }
 }
