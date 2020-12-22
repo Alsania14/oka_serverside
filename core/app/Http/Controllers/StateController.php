@@ -10,7 +10,7 @@ class StateController extends Controller
 {
     public function readState(){
         $state = State::where('id',1)->first();
-        return response()->json($state->state);
+        return $state->state;
     }
 
     public function offState(){
