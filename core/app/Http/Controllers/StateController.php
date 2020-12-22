@@ -10,20 +10,20 @@ class StateController extends Controller
 {
     public function readState(){
         $state = State::where('id',1)->first();
-        return response($state->state);
+        return response()->json(['status' => 200,'state_right_now' => $state->state,'message' => 'everythings good']);
     }
 
     public function offState(){
         $state = State::where('id',1)->first();
         $state->state = 0;
         $state->save();
-        return response(200);
+        return response()->json(['status' => 200,'change_state_to' => 0,'message' => 'everythings good']);
     }
 
     public function onState(){
         $state = State::where('id',1)->first();
         $state->state = 1;
         $state->save();
-        return response(200);
+        return response()->json(['status' => 200,'change_state_to' => 1,'message' => 'everythings good']);
     }
 }
