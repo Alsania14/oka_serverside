@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/readstate','StateController@readState');
+
+Route::post('/offState','StateController@offState');
+Route::post('/onState','StateController@onState');
