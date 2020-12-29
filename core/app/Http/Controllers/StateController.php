@@ -17,13 +17,13 @@ class StateController extends Controller
         $state = State::where('id',1)->first();
         $state->state = 0;
         $state->save();
-        return response()->json(['status' => 200,'change_state_to' => 0,'message' => 'everythings good']);
+        return 200;
     }
 
     public function onState(){
         $state = State::where('id',1)->first();
         $state->state = 1;
         $state->save();
-        return response()->json(['status' => 200,'change_state_to' => 1,'message' => 'everythings good']);
+        return 200;
     }
 }
